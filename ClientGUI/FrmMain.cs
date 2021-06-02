@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.ServiceModel;
+using System.ServiceModel.Description;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -230,7 +231,9 @@ namespace ClientGUI
 
                 TAFFFileData tdata1, tdata2;
                 Task<TAFFFileData> task1 = Task.Run(() => RunTask(tasks, processors, configData, runtime, "ServerOneEndPoint"));
+                WriteLine("Task 1 Running.......");
                 Task<TAFFFileData> task2 = Task.Run(() => RunTask(tasks, processors, configData, runtime, "ServerTwoEndPoint"));
+                WriteLine("Task 2 Running.......");
                 await task1;
                 await task2;
                 if (task1.IsCompleted && task2.IsCompleted)
