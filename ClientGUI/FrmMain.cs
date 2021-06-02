@@ -14,8 +14,8 @@ namespace ClientGUI
     {
 
         Logger logger = null;
-        double timeOut = 5.0;
 
+        double timeOut = 5.0;
         public FrmMain()
         {
             InitializeComponent();
